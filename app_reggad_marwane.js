@@ -24,12 +24,6 @@ function tirageNombre(min, max) {
 function demarrerJeu() {
     secret = tirageNombre(1, 50);
     essais = [];
-
-    document.querySelector("#proposition").value = "";
-    document.querySelector("#indice").textContent =
-        "Entrez un nombre puis cliquez sur Tester.";
-
-    afficherHistorique();
 }
 
 // ------------------------------------------------------
@@ -50,7 +44,6 @@ function afficherHistorique() {
         texte += "</ul>";
     }
 
-    document.querySelector("#historique").innerHTML = texte;
 }
 
 // ------------------------------------------------------
@@ -62,15 +55,14 @@ function afficherHistorique() {
 //    - affiche l’indice ("plus", "moins", "bravo")
 // ------------------------------------------------------
 function tester() {
-    let valeur = Number(document.querySelector("#proposition").value);
-    let indice = document.querySelector("#indice");
+    let valeur = ()
+    let indice = ()
 
     if (|| valeur < 1 || valeur > 50) {
         indice.textContent = "Veuillez entrer un nombre entre 1 et 50.";
         return;
     }
 
-    essais.push(valeur);
 
     if (valeur < secret) {
         indice.textContent = "C'est plus !";
@@ -81,8 +73,6 @@ function tester() {
             "Bravo ! Vous avez trouvé en " + essais.length + " essai(s).";
     }
 
-    afficherHistorique();
-    document.querySelector("#proposition").value = "";
 }
 
 // ------------------------------------------------------
